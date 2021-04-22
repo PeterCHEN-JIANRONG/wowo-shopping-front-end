@@ -24,6 +24,10 @@ const constraints = {
         presence: {
             allowEmpty: false,
             message: "是必填欄位"
+        },
+        length: {
+            minimum: 8,
+            tooShort: "至少 %{count} 碼"
         }
     },
     Email: {
@@ -299,3 +303,4 @@ inputs.forEach(input => {
         };
     })
 })
+

@@ -7,7 +7,11 @@ const orderBtn = document.querySelector(".orderInfo-btn");
 const orderForm = document.querySelector(".orderInfo-form");
 
 // API URL
-const cartUrl = `https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/${api_path}/carts`;
+// 舊domain 7/15關閉
+// const cartUrl = `https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/${api_path}/carts`;
+// 新domain 6/15啟用
+const cartUrl = `https://livejs-api.hexschool.io/api/livejs/v1/customer/${api_path}/carts`;
+
 // global variable
 let productData = [];
 let cartData = {};
@@ -63,7 +67,7 @@ function init() {
 
 // get list
 function getProductList() {
-    const url = `https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/${api_path}/products`;
+    const url = `https://livejs-api.hexschool.io/api/livejs/v1/customer/${api_path}/products`;
     axios.get(url).then(function (response) {
         productData = response.data.products;
         renderProductList(productData);
@@ -264,7 +268,7 @@ orderBtn.addEventListener("click", function (e) {
             }
         }
     }
-    axios.post(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/${api_path}/orders`, sendData)
+    axios.post(`https://livejs-api.hexschool.io/api/livejs/v1/customer/${api_path}/orders`, sendData)
         .then(function (response) {
             alert("送出成功");
             orderForm.reset(); //清空表單資料

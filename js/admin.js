@@ -4,7 +4,7 @@ const orderList = document.querySelector(".js-orderList");
 const orderDeleteAll = document.querySelector(".js-orderDeleteAll");
 
 // global variable
-const orderUrl = `https://hexschoollivejs.herokuapp.com/api/livejs/v1/admin/${api_path}/orders`;
+const orderUrl = `https://livejs-api.hexschool.io/api/livejs/v1/admin/${api_path}/orders`;
 const headersData = {
     headers: { //※headers的h必須是小寫，不可以大寫Headers
         Authorization: api_token
